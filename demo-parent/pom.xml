@@ -13,8 +13,11 @@
 
     <!--集中配置版本关系-->
     <properties>
+        <!--Redis的客户端配置-->
         <jedis.version>2.9.0</jedis.version>
-        <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
+        <!--spring boot的版本-->
+        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
+        <!--jackson的版本-->
         <jackson.version>2.8.8</jackson.version>
     </properties>
 

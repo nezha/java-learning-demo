@@ -3,7 +3,6 @@ package com.nezha.learn.demo;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nezha.learn.demo.domain.User;
 import com.nezha.learn.demo.service.UseRedisDemo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
