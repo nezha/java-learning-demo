@@ -14,10 +14,16 @@
         <module>demo-parent</module>
         <!--使用spring boot的依赖-->
         <module>demo-juc</module>
+        <!--面向切面编程的例子-->
         <module>demo-aop</module>
+        <!--用于存放对象的bean-->
         <module>demo-model</module>
+        <!--基于spring cloud的一些demo-->
+        <module>demo-cloud</module>
+        <module>demo-autowired</module>
+        <module>demo-web</module>
+        <module>demo-autowire</module>
     </modules>
-
     <build>
         <plugins>
             <plugin>

@@ -15,11 +15,11 @@ public class UseRedisDemo {
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
 
-    public void addUser(){
-        String key = "demo:redis:test";
+    public void say(String name){
+        String key = "demo:redis:"+name;
         try {
-            redisTemplate.opsForValue().set(key, "Hello World!");
-            redisTemplate.expire(key,10,TimeUnit.SECONDS);
+            redisTemplate.opsForValue().setIfAbsent(key, "Hello World!");
+            redisTemplate.expire(key,1000,TimeUnit.SECONDS);
         }catch (Exception e){
             logger.info(e.getLocalizedMessage());
         }

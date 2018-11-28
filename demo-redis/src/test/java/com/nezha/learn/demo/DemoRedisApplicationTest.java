@@ -28,7 +28,10 @@ public class DemoRedisApplicationTest {
 
     @Test
     public void test() throws Exception {
-        useRedisDemo.addUser();
+        useRedisDemo.say("nezha");
+        useRedisDemo.say("xiaoming");
+        useRedisDemo.say("jack");
+        useRedisDemo.say("jack");
     }
 
     @Test

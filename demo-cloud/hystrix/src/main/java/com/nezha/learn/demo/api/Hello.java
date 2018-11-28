@@ -17,7 +17,7 @@ public class Hello {
 
     @RequestMapping("/user/{name}")
     public User login(@PathVariable("name") String name){
-        User user = new User(name,26);
+        User user = new User(name,23);
         return user;
     }
 }
