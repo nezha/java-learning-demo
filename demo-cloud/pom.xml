@@ -14,6 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>hystrix</module>
+        <module>euraka</module>
     </modules>
 
     <dependencies>

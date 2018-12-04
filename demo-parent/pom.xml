@@ -19,6 +19,9 @@
         <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
         <!--jackson的版本-->
         <jackson.version>2.8.8</jackson.version>
+
+        <curator.version>2.9.0</curator.version>
+        <curator-recipes.version>2.7.1</curator-recipes.version>
     </properties>
 
     <!--此处 dependencyManagement 并不会直接引入依赖，是一种懒加载的方式-->
@@ -44,7 +47,18 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
-            <!--引入-->
+            <!--引入zookeeper的客户端框架curator,Guava is to JAVA what Curator is to Zookeeper-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator-recipes.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
