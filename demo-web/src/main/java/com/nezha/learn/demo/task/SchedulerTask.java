@@ -18,7 +18,7 @@ import java.util.Date;
 public class SchedulerTask {
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     private static final Logger logger = LoggerFactory.getLogger(SchedulerTask.class);
-    @Scheduled(fixedRate = 6000)
+//    @Scheduled(fixedRate = 6000)
     public void reportCurrentTime() {
         logger.info("现在时间：" + dateFormat.format(new Date()));
     }

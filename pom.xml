@@ -23,6 +23,7 @@
         <module>demo-web</module>
         <module>demo-autowire</module>
         <module>demo-proxy</module>
+        <module>demo-zklock</module>
     </modules>
     <build>
         <plugins>

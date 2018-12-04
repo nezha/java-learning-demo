@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+zookeeper:
+  root: /zklock
+  retry: 5
+  connect: 127.0.0.1:2181
+  timeout:
+    connect: 300000
+    session: 300000
