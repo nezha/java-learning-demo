@@ -15,7 +15,7 @@ public class App {
         System.out.println(target.getClass());
 
         // 给目标对象，创建代理对象
-        IUserDao proxy = (IUserDao) new ProxyFactory(target).getProxyInstance();
+        IUserDao proxy = (IUserDao) new ProxyFactory(target).getProxyInstanceLambda();
         // class $Proxy0   内存中动态生成的代理对象
         System.out.println(proxy.getClass());
 
