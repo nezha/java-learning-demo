@@ -24,6 +24,9 @@
         <module>demo-autowire</module>
         <module>demo-proxy</module>
         <module>demo-zklock</module>
+        <module>demo-nio</module>
+        <module>demo-java</module>
+        <module>demo-dubbo</module>
     </modules>
     <build>
         <plugins>

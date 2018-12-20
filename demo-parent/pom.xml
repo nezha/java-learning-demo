@@ -22,6 +22,9 @@
 
         <curator.version>2.9.0</curator.version>
         <curator-recipes.version>2.7.1</curator-recipes.version>
+        <netty.all.version>4.0.42.Final</netty.all.version>
+        <dubbo.version>2.6.4</dubbo.version>
+        <dubbo.spring-boot.version>0.2.0</dubbo.spring-boot.version>
     </properties>
 
     <!--此处 dependencyManagement 并不会直接引入依赖，是一种懒加载的方式-->
@@ -60,6 +63,26 @@
                 <version>${curator-recipes.version}</version>
             </dependency>
 
+            <!--Netty的依赖-->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.all.version}</version>
+            </dependency>
+
+            <!--dubbo依赖-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <!--dubbo-springBoot依赖-->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.spring-boot.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
