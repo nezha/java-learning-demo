@@ -8,7 +8,7 @@
     <version>1.1-SNAPSHOT</version>
     <!--这里是我们的子模块列表-->
     <modules>
-        <!--使用Jedis依赖-->
+        <!--基于Redis实现的分布式锁-->
         <module>demo-redis</module>
         <!--主要用于管理依赖关系-->
         <module>demo-parent</module>
@@ -19,14 +19,21 @@
         <!--用于存放对象的bean-->
         <module>demo-model</module>
         <!--基于spring cloud的一些demo-->
-        <module>demo-cloud</module>
         <module>demo-web</module>
+        <!--Spring Boot中的自动注入-->
         <module>demo-autowire</module>
+        <!--实现多种动态代理，JDK和CGlib-->
         <module>demo-proxy</module>
+        <!--基于zookeeper的分布式锁-->
         <module>demo-zklock</module>
+        <!--Java原生nio和netty的例子-->
         <module>demo-nio</module>
+        <!--Java的基础编程-->
         <module>demo-java</module>
+        <!--dubbo的尝试-->
         <module>demo-dubbo</module>
+        <!--手写rpc的demo-->
+        <module>demo-rpc</module>
     </modules>
     <build>
         <plugins>
