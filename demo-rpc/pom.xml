@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>demo-parent</artifactId>
+        <groupId>com.nezha.learn.demo</groupId>
+        <version>1.1-SNAPSHOT</version>
+        <relativePath>../demo-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>demo-rpc</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>rpc-api</module>
+        <module>rpc-consumer</module>
+        <module>rpc-provider</module>
+    </modules>
+
+
+</project>
