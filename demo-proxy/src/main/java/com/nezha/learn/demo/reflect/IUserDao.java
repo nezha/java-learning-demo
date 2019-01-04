@@ -7,5 +7,5 @@ package com.nezha.learn.demo.reflect;
  * @Version: 1.0 <br>
  */
 public interface IUserDao {
-    void save();
+    void save(String name,int age);
 }
