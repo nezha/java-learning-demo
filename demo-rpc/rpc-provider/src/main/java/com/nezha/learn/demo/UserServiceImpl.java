@@ -1,7 +1,7 @@
 package com.nezha.learn.demo;
 
 /**
- * @Description: xxxxx <br>
+ * @Description: 实现接口的类 <br>
  * @Date: 2019/1/4 3:07 PM <br>
  * @Author: objcat <br>
  * @Version: 1.0 <br>

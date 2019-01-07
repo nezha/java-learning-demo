@@ -3,7 +3,7 @@ package com.nezha.learn.demo;
 import java.io.Serializable;
 
 /**
- * @Description: xxxxx <br>
+ * @Description: User用户对象 <br>
  * @Date: 2018/11/23 12:23 PM <br>
  * @Author: zhangyi <br>
  * @Version: 1.0 <br>
