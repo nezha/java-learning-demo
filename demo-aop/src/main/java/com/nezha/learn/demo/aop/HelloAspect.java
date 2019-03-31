@@ -1,9 +1,12 @@
 package com.nezha.learn.demo.aop;
 
 import com.nezha.learn.demo.User;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,9 +17,14 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
+@Slf4j
 public class HelloAspect {
 
+    @Autowired
+    private ApplicationContext applicationContext;
+
     @Pointcut("execution(* com.nezha.learn.demo.api.Hello.login(..))")
+//    @Pointcut("@annotation(org.springframework.stereotype.Service)")
     private void pointCutLogin(){ }
 
 
@@ -25,7 +33,7 @@ public class HelloAspect {
         Object[] args = joinPoint.getArgs();
         String className = joinPoint.getSignature().getDeclaringTypeName();
         String methodName = joinPoint.getSignature().getName();
-        System.out.println("before开始执行--->>>"+className+"/"+methodName+",参数是："+String.valueOf(args[0]));
+        log.info("before开始执行--->>>",className,"/",methodName,",参数是：",String.valueOf(args[0]));
     }
 
     @After(value = "pointCutLogin()")
@@ -33,7 +41,7 @@ public class HelloAspect {
         Object[] args = joinPoint.getArgs();
         String className = joinPoint.getSignature().getDeclaringTypeName();
         String methodName = joinPoint.getSignature().getName();
-        System.out.println("after开始执行--->>>"+className+"/"+methodName+",参数是："+String.valueOf(args[0]));
+        log.info("after开始执行--->>>"+className+"/"+methodName+",参数是："+String.valueOf(args[0]));
     }
 
     @Around(value = "pointCutLogin()")
@@ -41,7 +49,7 @@ public class HelloAspect {
         Object[] args = proceedingJoinPoint.getArgs();
         String className = proceedingJoinPoint.getSignature().getDeclaringTypeName();
         String methodName = proceedingJoinPoint.getSignature().getName();
-        System.out.println("Around开始执行--->>>"+className+"/"+methodName+",参数是："+String.valueOf(args[0]));
+        log.info("Around开始执行--->>>"+className+"/"+methodName+",参数是："+String.valueOf(args[0]));
         Object[] input = {"nezha"};
         Object proceed = null;
         try {
@@ -50,7 +58,7 @@ public class HelloAspect {
         }catch (Throwable t){
             t.printStackTrace();
         }
-        System.out.println("===获得的proceed结果是："+(User)proceed);
+        log.info("===获得的proceed结果是："+(User)proceed);
         //！！！这边如果不把proceed返回出去，拦截的方法也不会进行结果返回的！
         return proceed;
 
