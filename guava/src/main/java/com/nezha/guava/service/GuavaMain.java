@@ -4,19 +4,21 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import org.springframework.util.StopWatch;
 
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author: nezha <br>
- * @Title: Main <br>
+ * @Title: GuavaMain <br>
  * @ProjectName: demo-guava <br>
  * @Description: main函数 <br>
  * @Date: 2019/8/6 1:49 PM <br>
  */
-public class Main {
+public class GuavaMain {
     public static void main(String[] args) {
         cacheWriteTest();
     }
@@ -31,16 +33,18 @@ public class Main {
                 .maximumSize(1000000)
                 .recordStats()
                 .build();
-        long start = System.currentTimeMillis();
+        StopWatch stopWatch = new StopWatch(UUID.randomUUID().toString());
+        stopWatch.start("put operate");
         for (int i = 0; i < 1000000; i++) {
             cache.put(i, i);
         }
-        System.out.println(System.currentTimeMillis() - start);
-        start = System.currentTimeMillis();
+        stopWatch.stop();
+        stopWatch.start("get operate");
         for (int i = 0; i < 1000000; i++) {
             cache.getIfPresent(ThreadLocalRandom.current().nextInt(1000000));
         }
-        System.out.println(System.currentTimeMillis() - start);
+        stopWatch.stop();
+        System.out.println(stopWatch.prettyPrint());
         System.out.println(cache.stats());
 
     }
