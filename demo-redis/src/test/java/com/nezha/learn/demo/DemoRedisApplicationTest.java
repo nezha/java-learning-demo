@@ -13,6 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -29,7 +32,7 @@ public class DemoRedisApplicationTest {
     @Test
     public void test() throws Exception {
         useRedisDemo.say("nezha");
-        useRedisDemo.say("xiaoming");
+        useRedisDemo.say("你好");
         useRedisDemo.say("jack");
         useRedisDemo.say("jack");
     }
@@ -38,8 +41,9 @@ public class DemoRedisApplicationTest {
     public void jacksonTest() throws Exception{
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        User user = new User("张熠", 26);
-        String json=mapper.writeValueAsString(user); //将对象转换成json
+        Map<String,String> map = new HashMap<>();
+        map.put("name","zhangyi");
+        String json=mapper.writeValueAsString(map); //将对象转换成json
         logger.info("序列化的内容是：{}",json);
         System.out.println(json);
 
