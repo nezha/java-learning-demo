@@ -26,7 +26,6 @@ public class CuratorZKClient {
 
     public CuratorZKClient() {
         //获取zookeeper的地址
-        //String zkAddress = XConfig.getValue(Constants.ZK_ADDRESS_KEY);
         String zkAddress = "127.0.0.1:2181";
         CuratorFrameworkFactory.Builder builder = CuratorFrameworkFactory.builder()
                 .connectString(zkAddress)
