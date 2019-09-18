@@ -26,7 +26,7 @@ public class ImConnection {
             Bootstrap b = new Bootstrap();
             b.group(workerGroup);
             b.channel(NioSocketChannel.class);
-            b.option(ChannelOption.SO_KEEPALIVE, true);
+            b.option(ChannelOption.TCP_NODELAY, true);
             b.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 public void initChannel(SocketChannel ch) throws Exception {
@@ -42,19 +42,21 @@ public class ImConnection {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         String host = "127.0.0.1";
         int port = 2222;
         Channel channel = new ImConnection().connect(host, port);
-        while (true){
-            channel.writeAndFlush("aaaaa-你好服务器-"+System.currentTimeMillis());
-            try {
-                Thread.sleep(10000);
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
-
-        }
+//        while (true){
+//            channel.writeAndFlush("aaaaa-你好服务器-"+System.currentTimeMillis()).sync();
+//            try {
+//                Thread.sleep(10000);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//
+//        }
+        channel.writeAndFlush("aaaaa-你好服务器-"+System.currentTimeMillis()).sync();
+        channel.closeFuture().sync();
 
     }
 }

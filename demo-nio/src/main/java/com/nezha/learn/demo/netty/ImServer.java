@@ -31,6 +31,7 @@ public class ImServer {
         }).start();
     }
     public void run(int port) {
+        //默认是内核的两倍
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         ServerBootstrap bootstrap = new ServerBootstrap();
@@ -44,7 +45,9 @@ public class ImServer {
                         ch.pipeline().addLast(new ServerStringHandler());
                     }
                 })
-                .option(ChannelOption.SO_BACKLOG, 128)
+                //用户存放客户端请求的队列长度，默认50
+                .option(ChannelOption.SO_BACKLOG, 1024)
+                //使用心跳机制维护长连接
                 .childOption(ChannelOption.SO_KEEPALIVE, true);
         try {
             ChannelFuture f = bootstrap.bind(port).sync();
