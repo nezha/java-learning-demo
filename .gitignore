@@ -69,3 +69,4 @@ buildNumber.properties
 *.iml
 out
 gen
+.mvn

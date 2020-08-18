@@ -1,0 +1,24 @@
+package com.nezha.component.model;
+
+/**
+ * Created by kl on 2017/12/29.
+ * Content :锁类型
+ */
+public enum LockType {
+    /**
+     * 可重入锁
+     */
+    Reentrant,
+    /**
+     * 读锁
+     */
+    Read,
+    /**
+     * 写锁
+     */
+    Write;
+
+    LockType() {
+    }
+
+}
