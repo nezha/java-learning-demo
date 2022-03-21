@@ -23,7 +23,7 @@
         <curator.version>2.9.0</curator.version>
         <curator-recipes.version>2.7.1</curator-recipes.version>
         <netty.all.version>4.0.42.Final</netty.all.version>
-        <dubbo.version>2.6.4</dubbo.version>
+        <dubbo.version>2.6.9</dubbo.version>
         <dubbo.spring-boot.version>0.2.0</dubbo.spring-boot.version>
     </properties>
 
